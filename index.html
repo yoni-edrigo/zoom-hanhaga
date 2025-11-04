@@ -1,1 +1,656 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>כנס פתיחת שנה - קורס הנהגה</title>
 
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="כנס פתיחת שנה וחשיפת קורס ההנהגה לשכבה ט' - מש״צים מחוז ירושלים. יום ראשון, 9.11.25 בשעה 19:00"
+    />
+    <meta
+      name="keywords"
+      content="קורס הנהגה, שכבה ט, מש״צים, ירושלים, כנס פתיחה"
+    />
+    <meta name="author" content="מש״צים מחוז ירושלים" />
+
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:title" content="כנס פתיחת שנה - קורס ההנהגה לשכבה ט'" />
+    <meta
+      property="og:description"
+      content="כנס פתיחת שנה וחשיפת קורס ההנהגה לשכבה ט' - מש״צים מחוז ירושלים. הצטרפו אלינו ביום ראשון, 9.11.25 בשעה 19:00"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://edu-il.zoom.us/s/85425928881" />
+    <meta
+      property="og:image"
+      content="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@68bf9ed80fec634105344d70d6633ddc128be5d4/first%20frame.jpg"
+    />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:site_name" content="מש״צים מחוז ירושלים" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="כנס פתיחת שנה - קורס ההנהגה לשכבה ט'" />
+    <meta
+      name="twitter:description"
+      content="כנס פתיחת שנה וחשיפת קורס ההנהגה לשכבה ט' - מש״צים מחוז ירושלים. הצטרפו אלינו ביום ראשון, 9.11.25 בשעה 19:00"
+    />
+    <meta
+      name="twitter:image"
+      content="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@68bf9ed80fec634105344d70d6633ddc128be5d4/first%20frame.jpg"
+    />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#667eea" />
+    <meta name="msapplication-TileColor" content="#667eea" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100svw;
+        height: 100svh;
+        overflow: hidden;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        position: relative;
+        direction: rtl;
+        background: url("https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1920&q=80")
+          center/cover no-repeat;
+        background-color: #1a1a2e;
+      }
+
+      /* Video Background */
+      .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      /* Dark overlay mask */
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.75),
+          rgba(20, 20, 50, 0.8)
+        );
+        z-index: 1;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        color: white;
+      }
+
+      /* Logo Section */
+      .logos {
+        position: absolute;
+        top: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3rem;
+        z-index: 10;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        transition: transform 0.3s ease;
+        overflow: hidden;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .logo-svg {
+        filter: brightness(0) invert(1);
+      }
+
+      .logo img,
+      .logo svg {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      .logo svg path {
+        fill: white !important;
+      }
+
+      /* Main Content */
+      .content {
+        text-align: center;
+        max-width: 800px;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #fff, #a8daff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 30px rgba(168, 218, 255, 0.3);
+        line-height: 1.3;
+      }
+
+      .subtitle {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        color: #e0e0e0;
+        margin-bottom: 3rem;
+        font-weight: 300;
+      }
+
+      /* Countdown Timer */
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .time-unit {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 1.5rem 2rem;
+        min-width: 120px;
+        transition: all 0.3s ease;
+      }
+
+      .time-unit:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .time-value {
+        font-size: 3rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: block;
+        line-height: 1;
+      }
+
+      .time-label {
+        font-size: 0.9rem;
+        color: #b0b0b0;
+        margin-top: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Join Button */
+      .join-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1.2rem 3rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .join-button span {
+        display: inline-flex;
+        align-items: center;
+        font-size: 1.5rem;
+      }
+
+      .join-button svg {
+        width: 24px;
+        height: 24px;
+        fill: white;
+      }
+
+      .join-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .join-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+      }
+
+      .join-button:hover::before {
+        left: 100%;
+      }
+
+      .join-button:active {
+        transform: translateY(-1px);
+      }
+
+      .join-button span {
+        margin-right: 0.5rem;
+        font-size: 1.5rem;
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+
+      .join-button:hover span {
+        transform: scale(1.2) rotate(10deg);
+      }
+
+      /* Event Details */
+      .event-details {
+        margin-top: 2rem;
+        font-size: 1.1rem;
+        color: #d0d0d0;
+        opacity: 0.9;
+      }
+
+      .event-time {
+        font-weight: 600;
+        color: #4facfe;
+        margin-top: 0.5rem;
+      }
+
+      /* Decorative elements */
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        animation: float 6s infinite ease-in-out;
+        z-index: 1;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(50px);
+          opacity: 0;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .logos {
+          padding: 0 1rem;
+          top: 1rem;
+          flex-direction: row;
+          justify-content: space-around;
+          gap: 1rem;
+        }
+
+        .logo {
+          width: 70px;
+          height: 70px;
+          padding: 0.6rem;
+        }
+
+        .container {
+          padding: 1rem;
+          padding-top: 120px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .subtitle {
+          font-size: 1.1rem;
+          margin-bottom: 2rem;
+        }
+
+        .countdown {
+          gap: 0.8rem;
+          margin-bottom: 2rem;
+        }
+
+        .time-unit {
+          padding: 0.8rem 1rem;
+          min-width: 70px;
+        }
+
+        .time-value {
+          font-size: 1.8rem;
+        }
+
+        .time-label {
+          font-size: 0.7rem;
+        }
+
+        .join-button {
+          padding: 1rem 2rem;
+          font-size: 1rem;
+          gap: 0.5rem;
+        }
+
+        .join-button svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        .join-button span {
+          font-size: 1.2rem;
+        }
+
+        .event-details {
+          margin-top: 1.5rem;
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logos {
+          gap: 0.6rem;
+          padding: 0 0.8rem;
+        }
+
+        .logo {
+          width: 60px;
+          height: 60px;
+          padding: 0.5rem;
+        }
+
+        .container {
+          padding-top: 100px;
+          padding-left: 0.8rem;
+          padding-right: 0.8rem;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+          line-height: 1.4;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .countdown {
+          gap: 0.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .time-unit {
+          padding: 0.7rem 0.8rem;
+          min-width: 65px;
+          border-radius: 15px;
+        }
+
+        .time-value {
+          font-size: 1.6rem;
+        }
+
+        .time-label {
+          font-size: 0.65rem;
+          margin-top: 0.3rem;
+        }
+
+        .join-button {
+          padding: 0.9rem 1.8rem;
+          font-size: 0.95rem;
+          gap: 0.4rem;
+        }
+
+        .join-button svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        .join-button span {
+          font-size: 1.1rem;
+        }
+
+        .event-details {
+          font-size: 0.95rem;
+        }
+
+        .event-time {
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .logo {
+          width: 55px;
+          height: 55px;
+        }
+
+        h1 {
+          font-size: 1.3rem;
+        }
+
+        .time-unit {
+          min-width: 60px;
+          padding: 0.6rem 0.7rem;
+        }
+
+        .time-value {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Video Background -->
+    <video
+      class="video-background"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@68bf9ed80fec634105344d70d6633ddc128be5d4/first%20frame.jpg"
+    >
+      <source
+        src="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@81344365e579f05ea47d87cfa8bd52c3f156629c/Hanhaga%20Bg.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <!-- Decorative particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s"></div>
+    <div class="particle" style="left: 20%; animation-delay: 2s"></div>
+    <div class="particle" style="left: 30%; animation-delay: 4s"></div>
+    <div class="particle" style="left: 50%; animation-delay: 1s"></div>
+    <div class="particle" style="left: 70%; animation-delay: 3s"></div>
+    <div class="particle" style="left: 85%; animation-delay: 5s"></div>
+    <div class="particle" style="left: 90%; animation-delay: 2.5s"></div>
+
+    <!-- Logo placeholders -->
+    <div class="logos">
+      <div class="logo">
+        <img
+          src="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@3e413a87a4b239edb1ad21ceb3e9c763c3a0fde7/logo%20bw%20mashazim.svg"
+          alt="Mashazim Logo"
+          class="logo-svg"
+        />
+      </div>
+      <div class="logo">
+        <img
+          src="https://static.wixstatic.com/media/d9444e_d7a7c99753b0415c9e72247f7b68b1e1~mv2.gif"
+          alt="Logo"
+        />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <h1>כנס פתיחת שנה וחשיפת<br />קורס ההנהגה לשכבה ט'</h1>
+        <p class="subtitle">מש"צים מחוז ירושלים</p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown">
+          <div class="time-unit">
+            <span class="time-value" id="days">00</span>
+            <span class="time-label">ימים</span>
+          </div>
+          <div class="time-unit">
+            <span class="time-value" id="hours">00</span>
+            <span class="time-label">שעות</span>
+          </div>
+          <div class="time-unit">
+            <span class="time-value" id="minutes">00</span>
+            <span class="time-label">דקות</span>
+          </div>
+          <div class="time-unit">
+            <span class="time-value" id="seconds">00</span>
+            <span class="time-label">שניות</span>
+          </div>
+        </div>
+
+        <a
+          href="https://edu-il.zoom.us/s/85425928881"
+          target="_blank"
+          class="join-button"
+        >
+          הצטרפו למפגש
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="white"
+            >
+              <path
+                d="M2 8.5C2 7.67 2.67 7 3.5 7h11c.83 0 1.5.67 1.5 1.5v7c0 .83-.67 1.5-1.5 1.5h-11C2.67 17 2 16.33 2 15.5v-7zm2 .5v6h10V9H4z"
+              />
+              <path
+                d="M18.5 8.7l3.2-2.4c.3-.2.7 0 .7.4v10.6c0 .4-.4.6-.7.4l-3.2-2.4V8.7z"
+              />
+            </svg>
+          </span>
+        </a>
+
+        <div class="event-details">
+          <div class="event-time">יום ראשון, 9.11.25 | 19:00</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Countdown Timer
+      function updateCountdown() {
+        // Target date: November 9, 2025, 19:00 Israel time
+        const targetDate = new Date("2025-11-09T19:00:00+02:00").getTime();
+
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+          document.getElementById("days").textContent = "00";
+          document.getElementById("hours").textContent = "00";
+          document.getElementById("minutes").textContent = "00";
+          document.getElementById("seconds").textContent = "00";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("hours").textContent = String(hours).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutes").textContent = String(
+          minutes
+        ).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(
+          seconds
+        ).padStart(2, "0");
+      }
+
+      // Update countdown every second
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // Add more particles dynamically
+      function createParticle() {
+        const particle = document.createElement("div");
+        particle.className = "particle";
+        particle.style.left = Math.random() * 100 + "%";
+        particle.style.animationDelay = Math.random() * 6 + "s";
+        document.body.appendChild(particle);
+
+        setTimeout(() => particle.remove(), 6000);
+      }
+
+      setInterval(createParticle, 2000);
+    </script>
+  </body>
+</html>
