@@ -308,6 +308,13 @@
         color: #4facfe;
         margin-top: 0.5rem;
       }
+      .whatsapp-link {
+        display: inline-block;
+        margin-top: 1rem;
+        color: #fefefe;
+        font-weight: 400;
+        transition: color 0.3s ease;
+      }
 
       /* Decorative elements */
       .particle {
@@ -571,7 +578,13 @@
           class="join-button"
         >
           הצטרפו למפגש
-          <span>
+          <span
+            style="
+              display: inline-flex;
+              align-items: center;
+              transform: rotate(180deg);
+            "
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -591,6 +604,14 @@
 
         <div class="event-details">
           <div class="event-time">יום ראשון, 9.11.25 | 19:00</div>
+          <a
+            href="https://chat.whatsapp.com/ET9IW7VSmnxLXwphlzfXZT"
+            target="_blank"
+            class="whatsapp-link"
+          >
+            הצטרפו לקבוצת החניכים בוואטסאפ
+            <span>📱</span>
+          </a>
         </div>
       </div>
     </div>
