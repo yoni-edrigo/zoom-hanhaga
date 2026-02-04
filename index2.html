@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>הקלטת הכנס וחומרי הקורס - קורס הנהגה</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="הקלטת כנס פתיחת השנה ואישור הורים למפגשי ההכשרה בקורס ההנהגה לשכבה ט' - מש״צים מחוז ירושלים"
+    />
+    <meta
+      name="keywords"
+      content="קורס הנהגה, שכבה ט, מש״צים, ירושלים, הקלטה, חומרי לימוד"
+    />
+    <meta name="author" content="מש״צים מחוז ירושלים" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="הקלטת הכנס וחומרי הקורס - קורס ההנהגה" />
+    <meta
+      property="og:description"
+      content="צפו בהקלטת כנס פתיחת השנה והורידו את חומרי הקורס לגרעין שלכם"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@68bf9ed80fec634105344d70d6633ddc128be5d4/first%20frame.jpg"
+    />
+    <meta property="og:locale" content="he_IL" />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#667eea" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        position: relative;
+        direction: rtl;
+        background: url("https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1920&q=80")
+          center/cover no-repeat fixed;
+        background-color: #1a1a2e;
+      }
+
+      /* Video Background */
+      .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      /* Dark overlay mask */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.75),
+          rgba(20, 20, 50, 0.8)
+        );
+        z-index: 1;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        color: white;
+      }
+
+      /* Logo Section */
+      .logos {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem 2rem 1rem;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        transition: transform 0.3s ease;
+        overflow: hidden;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .logo-svg {
+        filter: brightness(0) invert(1);
+      }
+
+      /* Main Content */
+      .content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        flex-grow: 1;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #fff, #a8daff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 30px rgba(168, 218, 255, 0.3);
+        line-height: 1.3;
+        text-align: center;
+      }
+
+      .subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        color: #e0e0e0;
+        margin-bottom: 3rem;
+        font-weight: 300;
+        text-align: center;
+      }
+
+      /* Video Section */
+      .video-section {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .video-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: #4facfe;
+        text-align: center;
+      }
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 15px;
+      }
+
+      /* Downloads Section */
+      .downloads-section {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .downloads-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        color: #4facfe;
+        text-align: center;
+      }
+
+      .prompt-text {
+        text-align: center;
+        color: #d0d0d0;
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      /* Tabs */
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        justify-content: center;
+      }
+
+      .tab {
+        padding: 1rem 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        color: #e0e0e0;
+        font-weight: 500;
+      }
+
+      .tab:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .tab.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-color: #764ba2;
+        color: white;
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      /* Tab Content */
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .download-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .file-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+      }
+
+      .file-info {
+        text-align: center;
+      }
+
+      .file-name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+
+      .file-description {
+        color: #b0b0b0;
+        font-size: 1rem;
+      }
+
+      .download-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1rem 2.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        position: relative;
+        overflow: hidden;
+        border: none;
+        cursor: pointer;
+      }
+
+      .download-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .download-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+      }
+
+      .download-button:hover::before {
+        left: 100%;
+      }
+
+      .download-button:active {
+        transform: translateY(-1px);
+      }
+
+      /* Decorative particles */
+      .particle {
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        animation: float 6s infinite ease-in-out;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(50px);
+          opacity: 0;
+        }
+      }
+
+      /* WhatsApp Link */
+      .whatsapp-section {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 15px;
+      }
+
+      .whatsapp-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #fefefe;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-link:hover {
+        color: #4facfe;
+        transform: translateY(-2px);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .logos {
+          padding: 0 0.5rem 1.5rem 0.5rem;
+        }
+
+        .logo {
+          width: 70px;
+          height: 70px;
+          padding: 0.6rem;
+        }
+
+        .container {
+          padding: 1rem;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+          margin-bottom: 2rem;
+        }
+
+        .video-section,
+        .downloads-section {
+          padding: 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .video-section h2,
+        .downloads-section h2 {
+          font-size: 1.4rem;
+          margin-bottom: 1rem;
+        }
+
+        .prompt-text {
+          font-size: 1rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .tabs {
+          gap: 0.4rem;
+        }
+
+        .tab {
+          padding: 0.8rem 1rem;
+          font-size: 0.9rem;
+        }
+
+        .download-card {
+          padding: 1.5rem;
+        }
+
+        .file-icon {
+          width: 60px;
+          height: 60px;
+          font-size: 2rem;
+        }
+
+        .file-name {
+          font-size: 1.2rem;
+        }
+
+        .file-description {
+          font-size: 0.9rem;
+        }
+
+        .download-button {
+          padding: 0.9rem 2rem;
+          font-size: 1rem;
+        }
+
+        .whatsapp-section {
+          padding: 1rem;
+        }
+
+        .whatsapp-link {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo {
+          width: 60px;
+          height: 60px;
+          padding: 0.5rem;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        .subtitle {
+          font-size: 0.95rem;
+        }
+
+        .video-section h2,
+        .downloads-section h2 {
+          font-size: 1.2rem;
+        }
+
+        .tab {
+          padding: 0.7rem 0.8rem;
+          font-size: 0.85rem;
+        }
+
+        .file-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 1.8rem;
+        }
+
+        .file-name {
+          font-size: 1.1rem;
+        }
+
+        .download-button {
+          padding: 0.8rem 1.5rem;
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Video Background -->
+    <video
+      class="video-background"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@68bf9ed80fec634105344d70d6633ddc128be5d4/first%20frame.jpg"
+    >
+      <source
+        src="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@81344365e579f05ea47d87cfa8bd52c3f156629c/Hanhaga%20Bg.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <!-- Decorative particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s"></div>
+    <div class="particle" style="left: 20%; animation-delay: 2s"></div>
+    <div class="particle" style="left: 30%; animation-delay: 4s"></div>
+    <div class="particle" style="left: 50%; animation-delay: 1s"></div>
+    <div class="particle" style="left: 70%; animation-delay: 3s"></div>
+    <div class="particle" style="left: 85%; animation-delay: 5s"></div>
+    <div class="particle" style="left: 90%; animation-delay: 2.5s"></div>
+
+    <div class="container">
+      <!-- Logo Section -->
+      <div class="logos">
+        <div class="logo">
+          <img
+            src="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@3e413a87a4b239edb1ad21ceb3e9c763c3a0fde7/logo%20bw%20mashazim.svg"
+            alt="Mashazim Logo"
+            class="logo-svg"
+          />
+        </div>
+        <div class="logo">
+          <img
+            src="https://static.wixstatic.com/media/d9444e_d7a7c99753b0415c9e72247f7b68b1e1~mv2.gif"
+            alt="Logo"
+          />
+        </div>
+      </div>
+
+      <div class="content">
+        <h1>
+          הקלטת כנס פתיחת השנה<br />ואישורי הורים למפגשי ההכשרה בקורס ההנהגה
+        </h1>
+        <p class="subtitle">מש"צים מחוז ירושלים - שכבה ט'</p>
+
+        <!-- Video Section -->
+        <div class="video-section">
+          <h2>📹 הקלטת הכנס</h2>
+          <div class="video-container">
+            <!-- Replace with your actual video embed URL -->
+            <iframe
+              src="https://www.youtube.com/embed/iZ-GnUJMU4g?si=R3_DwbZwVBj1hXfN"
+              title="הקלטת כנס פתיחת השנה"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+              "
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Downloads Section -->
+        <div class="downloads-section">
+          <h2>📚 חומרי הקורס להורדה</h2>
+          <p class="prompt-text">בחרו את הגרעין שלכם להורדת החומרים המתאימים</p>
+
+          <!-- Tabs -->
+          <div class="tabs">
+            <div class="tab active" data-tab="beit-shemesh">גרעין בית שמש</div>
+            <div class="tab" data-tab="bikaat-hayarden">גרעין בקעת הירדן</div>
+            <div class="tab" data-tab="gush-etzion">
+              גרעין גוש עציון + ירושלים דתי
+            </div>
+            <div class="tab" data-tab="yerushalayim">גרעין ירושלים ממלכתי</div>
+            <div class="tab" data-tab="modiin">גרעין מודיעין</div>
+            <div class="tab" data-tab="maale-adumim">גרעין מעלה אדומים</div>
+          </div>
+
+          <!-- Tab Contents -->
+          <div class="tab-content active" data-content="beit-shemesh">
+            <div class="download-card">
+              <div class="file-icon">📄</div>
+              <div class="file-info">
+                <div class="file-name">אישור הורים - גרעין בית שמש</div>
+              </div>
+              <button
+                class="download-button"
+                onclick="downloadFile('beit-shemesh')"
+              >
+                <span>⬇️</span>
+                הורדת הקובץ
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" data-content="bikaat-hayarden">
+            <div class="download-card">
+              <div class="file-icon">📄</div>
+              <div class="file-info">
+                <div class="file-name">אישור הורים - גרעין בקעת הירדן</div>
+              </div>
+              <button
+                class="download-button"
+                onclick="downloadFile('bikaat-hayarden')"
+              >
+                <span>⬇️</span>
+                הורדת הקובץ
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" data-content="gush-etzion">
+            <div class="download-card">
+              <div class="file-icon">📄</div>
+              <div class="file-info">
+                <div class="file-name">
+                  אישור הורים - גרעין גוש עציון + ירושלים דתי
+                </div>
+              </div>
+              <button
+                class="download-button"
+                onclick="downloadFile('gush-etzion')"
+              >
+                <span>⬇️</span>
+                הורדת הקובץ
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" data-content="yerushalayim">
+            <div class="download-card">
+              <div class="file-icon">📄</div>
+              <div class="file-info">
+                <div class="file-name">אישור הורים - גרעין ירושלים ממלכתי</div>
+              </div>
+              <button
+                class="download-button"
+                onclick="downloadFile('yerushalayim')"
+              >
+                <span>⬇️</span>
+                הורדת הקובץ
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" data-content="modiin">
+            <div class="download-card">
+              <div class="file-icon">📄</div>
+              <div class="file-info">
+                <div class="file-name">אישור הורים - גרעין מודיעין</div>
+              </div>
+              <button class="download-button" onclick="downloadFile('modiin')">
+                <span>⬇️</span>
+                הורדת הקובץ
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" data-content="maale-adumim">
+            <div class="download-card">
+              <div class="file-icon">📄</div>
+              <div class="file-info">
+                <div class="file-name">אישור הורים - גרעין מעלה אדומים</div>
+              </div>
+              <button
+                class="download-button"
+                onclick="downloadFile('maale-adumim')"
+              >
+                <span>⬇️</span>
+                הורדת הקובץ
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp Section -->
+        <div class="whatsapp-section">
+          <a
+            href="https://chat.whatsapp.com/ET9IW7VSmnxLXwphlzfXZT"
+            target="_blank"
+            class="whatsapp-link"
+          >
+            הצטרפו לקבוצת החניכים בוואטסאפ
+            <span>📱</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Tab switching functionality
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          const tabName = this.getAttribute("data-tab");
+
+          // Remove active class from all tabs and contents
+          document.querySelectorAll(".tab").forEach((t) => {
+            t.classList.remove("active");
+          });
+          document.querySelectorAll(".tab-content").forEach((content) => {
+            content.classList.remove("active");
+          });
+
+          // Add active class to clicked tab and corresponding content
+          this.classList.add("active");
+          document
+            .querySelector(`[data-content="${tabName}"]`)
+            .classList.add("active");
+        });
+      });
+
+      // Download function - Replace these URLs with actual file URLs
+      const fileUrls = {
+        "beit-shemesh":
+          "https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@f940ad67cc018f1552c51e7147dd6859b52cc184/%D7%91%D7%99%D7%AA%20%D7%A9%D7%9E%D7%A9%20-%20%D7%9E%D7%A7%D7%95%D7%A6%D7%A8%20%D7%9E%D7%9B%D7%AA%D7%91%20%D7%A4%D7%AA%D7%99%D7%97%D7%AA%20%D7%A9%D7%A0%D7%94%20%D7%9E%D7%97%D7%95%D7%96%D7%99%20%D7%9C%D7%94%D7%95%D7%A8%D7%99%20%D7%94%D7%97%D7%A0%D7%99%D7%9B%D7%99%D7%9D%20%D7%91%D7%A7%D7%95%D7%A8%D7%A1%20%D7%94%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA.pdf",
+        "bikaat-hayarden":
+          "https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@f940ad67cc018f1552c51e7147dd6859b52cc184/%D7%91%D7%A7%D7%A2%D7%AA%20%D7%99%D7%A8%D7%93%D7%9F%20-%20%D7%9E%D7%A7%D7%95%D7%A6%D7%A8%20%D7%9E%D7%9B%D7%AA%D7%91%20%D7%A4%D7%AA%D7%99%D7%97%D7%AA%20%D7%A9%D7%A0%D7%94%20%D7%9E%D7%97%D7%95%D7%96%D7%99%20%D7%9C%D7%94%D7%95%D7%A8%D7%99%20%D7%94%D7%97%D7%A0%D7%99%D7%9B%D7%99%D7%9D%20%D7%91%D7%A7%D7%95%D7%A8%D7%A1%20%D7%94%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA.pdf",
+        "gush-etzion":
+          "https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@f940ad67cc018f1552c51e7147dd6859b52cc184/%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D%20%D7%93%D7%AA%D7%99%20-%20%D7%9E%D7%A7%D7%95%D7%A6%D7%A8%20%D7%9E%D7%9B%D7%AA%D7%91%20%D7%A4%D7%AA%D7%99%D7%97%D7%AA%20%D7%A9%D7%A0%D7%94%20%D7%9E%D7%97%D7%95%D7%96%D7%99%20%D7%9C%D7%94%D7%95%D7%A8%D7%99%20%D7%94%D7%97%D7%A0%D7%99%D7%9B%D7%99%D7%9D%20%D7%91%D7%A7%D7%95%D7%A8%D7%A1%20%D7%94%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA.pdf",
+        yerushalayim:
+          "https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@f940ad67cc018f1552c51e7147dd6859b52cc184/%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D%20%D7%9E%D7%9E%D7%9C%D7%9B%D7%AA%D7%99%20-%20%D7%9E%D7%A7%D7%95%D7%A6%D7%A8%20%D7%9E%D7%9B%D7%AA%D7%91%20%D7%A4%D7%AA%D7%99%D7%97%D7%AA%20%D7%A9%D7%A0%D7%94%20%D7%9E%D7%97%D7%95%D7%96%D7%99%20%D7%9C%D7%94%D7%95%D7%A8%D7%99%20%D7%94%D7%97%D7%A0%D7%99%D7%9B%D7%99%D7%9D%20%D7%91%D7%A7%D7%95%D7%A8%D7%A1%20%D7%94%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA.pdf",
+        modiin:
+          "https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@f940ad67cc018f1552c51e7147dd6859b52cc184/%D7%9E%D7%95%D7%93%D7%99%D7%A2%D7%99%D7%9F%20-%20%D7%9E%D7%A7%D7%95%D7%A6%D7%A8%20%D7%9E%D7%9B%D7%AA%D7%91%20%D7%A4%D7%AA%D7%99%D7%97%D7%AA%20%D7%A9%D7%A0%D7%94%20%D7%9E%D7%97%D7%95%D7%96%D7%99%20%D7%9C%D7%94%D7%95%D7%A8%D7%99%20%D7%94%D7%97%D7%A0%D7%99%D7%9B%D7%99%D7%9D%20%D7%91%D7%A7%D7%95%D7%A8%D7%A1%20%D7%94%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA.pdf",
+        "maale-adumim":
+          "https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@f940ad67cc018f1552c51e7147dd6859b52cc184/%D7%9E%D7%A2%D7%9C%D7%94%20%D7%90%D7%93%D7%95%D7%9E%D7%99%D7%9D%20-%20%D7%9E%D7%A7%D7%95%D7%A6%D7%A8%20%D7%9E%D7%9B%D7%AA%D7%91%20%D7%A4%D7%AA%D7%99%D7%97%D7%AA%20%D7%A9%D7%A0%D7%94%20%D7%9E%D7%97%D7%95%D7%96%D7%99%20%D7%9C%D7%94%D7%95%D7%A8%D7%99%20%D7%94%D7%97%D7%A0%D7%99%D7%9B%D7%99%D7%9D%20%D7%91%D7%A7%D7%95%D7%A8%D7%A1%20%D7%94%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA.pdf",
+      };
+
+      function downloadFile(garein) {
+        const fileUrl = fileUrls[garein];
+        if (fileUrl && fileUrl !== `URL_TO_${garein.toUpperCase()}_PDF`) {
+          window.open(fileUrl, "_blank");
+        } else {
+          alert("הקובץ יועלה בקרוב. אנא בדקו שוב מאוחר יותר.");
+        }
+      }
+
+      // Add more particles dynamically
+      function createParticle() {
+        const particle = document.createElement("div");
+        particle.className = "particle";
+        particle.style.left = Math.random() * 100 + "%";
+        particle.style.animationDelay = Math.random() * 6 + "s";
+        document.body.appendChild(particle);
+
+        setTimeout(() => particle.remove(), 6000);
+      }
+
+      setInterval(createParticle, 2000);
+    </script>
+  </body>
+</html>
