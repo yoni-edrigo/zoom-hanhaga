@@ -3,24 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>הקלטת מפגש הורים - כנס פסח הנהגה</title>
+    <title>כנס פסח קורס הנהגה 2026</title>
 
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="הקלטת מפגש הורים לקראת כנס פסח הנהגה - מש״צים מחוז ירושלים"
+      content="כנס פסח קורס הנהגה 2026 - מש״צים מחוז ירושלים. כנס זום ב-24.03.26 בשעה 16:00"
     />
-    <meta
-      name="keywords"
-      content="מפגש הורים, כנס פסח הנהגה, קורס הנהגה, מש״צים, ירושלים, הקלטה"
-    />
+    <meta name="keywords" content="כנס פסח, קורס הנהגה, מש״צים, ירושלים, זום" />
     <meta name="author" content="מש״צים מחוז ירושלים" />
 
-    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
-    <meta property="og:title" content="הקלטת מפגש הורים - כנס פסח הנהגה" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="כנס פסח קורס הנהגה 2026" />
     <meta
       property="og:description"
-      content="צפו בהקלטת מפגש הורים לקראת כנס פסח הנהגה - מש״צים מחוז ירושלים"
+      content="כנס פסח קורס הנהגה 2026 - מש״צים מחוז ירושלים. הצטרפו אלינו ב-24.03.26 בשעה 16:00"
     />
     <meta property="og:type" content="website" />
     <meta
@@ -32,21 +29,43 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="הקלטת מפגש הורים - כנס פסח הנהגה" />
+    <meta name="twitter:title" content="כנס פסח קורס הנהגה 2026" />
     <meta
       name="twitter:description"
-      content="צפו בהקלטת מפגש הורים לקראת כנס פסח הנהגה - מש״צים מחוז ירושלים"
+      content="כנס פסח קורס הנהגה 2026 - מש״צים מחוז ירושלים. הצטרפו אלינו ב-24.03.26 בשעה 16:00"
     />
     <meta
       name="twitter:image"
       content="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@68bf9ed80fec634105344d70d6633ddc128be5d4/first%20frame.jpg"
     />
 
-    <!-- Additional Meta Tags -->
-    <meta name="theme-color" content="#667eea" />
-    <meta name="msapplication-TileColor" content="#667eea" />
+    <meta name="theme-color" content="#1a0a3e" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
+      :root {
+        --gold: oklch(78% 0.15 85);
+        --gold-dim: oklch(65% 0.12 85);
+        --gold-glow: oklch(78% 0.15 85 / 0.25);
+        --cream: oklch(96% 0.02 85);
+        --deep: oklch(14% 0.04 270);
+        --deep-mid: oklch(18% 0.05 270);
+        --deep-light: oklch(24% 0.06 260);
+        --text-main: oklch(94% 0.01 85);
+        --text-muted: oklch(68% 0.04 260);
+        --accent-blue: oklch(72% 0.14 240);
+        --accent-teal: oklch(76% 0.13 195);
+        --radius-lg: 18px;
+        --radius-md: 12px;
+        --radius-sm: 8px;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -54,111 +73,96 @@
       }
 
       body {
+        font-family: "Heebo", "Segoe UI", Tahoma, sans-serif;
+        direction: rtl;
+        background: var(--deep);
+        color: var(--text-main);
         min-height: 100svh;
         overflow-x: hidden;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         position: relative;
-        direction: rtl;
-        background: url("https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1920&q=80")
-          center/cover no-repeat fixed;
-        background-color: #1a1a2e;
       }
 
-      /* Video Background */
+      /* ── Video BG ── */
       .video-background {
         position: fixed;
-        top: 0;
-        left: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
         z-index: 0;
+        opacity: 0.35;
       }
 
-      /* Dark overlay mask */
-      body::before {
-        content: "";
+      .bg-overlay {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background: linear-gradient(
-          135deg,
-          rgba(0, 0, 0, 0.75),
-          rgba(20, 20, 50, 0.8)
+          160deg,
+          oklch(10% 0.06 270 / 0.92) 0%,
+          oklch(12% 0.08 250 / 0.88) 50%,
+          oklch(10% 0.05 290 / 0.94) 100%
         );
         z-index: 1;
       }
 
-      .container {
+      /* ── Layout ── */
+      .page-wrap {
         position: relative;
         z-index: 2;
-        min-height: 100vh;
         display: flex;
         flex-direction: column;
-        padding: 2rem;
-        color: white;
+        min-height: 100svh;
       }
 
-      /* Logo Section */
+      /* ── Logo Header ── */
       .logos-header {
-        position: relative;
         width: 100%;
-        padding: 1.2rem 2rem 1.5rem;
-        margin-bottom: 0.5rem;
+        padding: 1.2rem 2rem 1.4rem;
         background: linear-gradient(
           to bottom,
-          rgba(0, 0, 0, 0.55) 0%,
-          rgba(10, 10, 30, 0.35) 70%,
+          oklch(8% 0.05 270 / 0.7) 0%,
           transparent 100%
         );
-        z-index: 1000;
       }
 
       .logos {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1200px;
-        width: 100%;
+        max-width: 1100px;
         margin: 0 auto;
       }
 
       .logo {
-        width: 110px;
-        height: 110px;
-        background: rgba(229, 229, 233, 0.75);
-        border-radius: 18px;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(238, 227, 227, 0.18);
-        box-shadow:
-          0 8px 32px rgba(0, 0, 0, 0.45),
-          0 0 0 1px rgba(255, 255, 255, 0.06),
-          inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        width: 100px;
+        height: 100px;
+        background: oklch(96% 0.02 85 / 0.12);
+        border: 1px solid oklch(96% 0.02 85 / 0.18);
+        border-radius: var(--radius-md);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
+        padding: 0.9rem;
         transition:
           transform 0.3s ease,
           box-shadow 0.3s ease;
+        animation: logoIn 0.7s ease both;
         overflow: hidden;
-        animation: logoFadeIn 0.8s ease both;
       }
 
       .logo:first-child {
         animation-delay: 0.1s;
       }
       .logo:last-child {
-        animation-delay: 0.25s;
+        animation-delay: 0.22s;
       }
 
-      @keyframes logoFadeIn {
+      @keyframes logoIn {
         from {
           opacity: 0;
-          transform: translateY(-12px);
+          transform: translateY(-10px);
         }
         to {
           opacity: 1;
@@ -167,266 +171,586 @@
       }
 
       .logo:hover {
-        transform: translateY(-4px) scale(1.04);
-        box-shadow:
-          0 16px 40px rgba(0, 0, 0, 0.55),
-          0 0 0 1px rgba(255, 255, 255, 0.14),
-          inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px oklch(0% 0 0 / 0.4);
       }
 
       .logo img {
         width: 100%;
         height: 100%;
         object-fit: contain;
-        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
       }
 
       .logo-svg {
         filter: brightness(0) invert(1)
-          drop-shadow(0 1px 4px rgba(0, 0, 0, 0.6));
+          drop-shadow(0 1px 4px oklch(0% 0 0 / 0.5));
       }
 
-      .logo img,
-      .logo svg {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-      }
-
-      .logo svg path {
-        fill: white !important;
-      }
-
-      /* Main Content */
-      .content {
-        max-width: 1200px;
-        width: 100%;
+      /* ── Main Content ── */
+      .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 1.5rem 3rem;
+        gap: 2.2rem;
+        max-width: 800px;
         margin: 0 auto;
-        flex-grow: 1;
+        width: 100%;
+      }
+
+      /* ── Hero ── */
+      .hero {
+        text-align: center;
+        animation: fadeUp 0.8s ease 0.15s both;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .event-tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+        border: 1px solid var(--gold-dim);
+        padding: 0.3rem 0.9rem;
+        border-radius: 50px;
+        margin-bottom: 1rem;
+        background: var(--gold-glow);
       }
 
       h1 {
-        font-size: clamp(2rem, 5vw, 3rem);
+        font-size: clamp(1.9rem, 5vw, 2.9rem);
+        font-weight: 900;
+        line-height: 1.2;
+        color: var(--cream);
+        margin-bottom: 0.5rem;
+      }
+
+      .org-label {
+        font-size: 1rem;
+        color: var(--text-muted);
+        font-weight: 400;
+      }
+
+      /* ── Countdown ── */
+      .countdown-wrap {
+        width: 100%;
+        animation: fadeUp 0.8s ease 0.28s both;
+      }
+
+      .countdown-label {
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold-dim);
+        margin-bottom: 0.9rem;
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .time-unit {
+        flex: 1;
+        min-width: 90px;
+        max-width: 130px;
+        background: oklch(100% 0 0 / 0.055);
+        border: 1px solid oklch(100% 0 0 / 0.12);
+        border-radius: var(--radius-lg);
+        padding: 1.2rem 0.8rem 1rem;
+        text-align: center;
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease;
+      }
+
+      .time-unit:hover {
+        background: oklch(100% 0 0 / 0.09);
+        transform: translateY(-4px);
+      }
+
+      .time-value {
+        display: block;
+        font-size: clamp(2rem, 5vw, 2.8rem);
         font-weight: 700;
-        margin-bottom: 1rem;
-        background: linear-gradient(135deg, #fff, #a8daff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: 0 0 30px rgba(168, 218, 255, 0.3);
-        line-height: 1.3;
+        color: var(--gold);
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.01em;
+      }
+
+      .time-label {
+        display: block;
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        margin-top: 0.45rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      /* ── Zoom Open Notice ── */
+      .zoom-notice {
         text-align: center;
+        font-size: 0.88rem;
+        color: var(--accent-teal);
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        background: oklch(76% 0.13 195 / 0.08);
+        border: 1px solid oklch(76% 0.13 195 / 0.2);
+        border-radius: 50px;
+        animation: fadeUp 0.8s ease 0.36s both;
       }
 
-      .subtitle {
-        font-size: clamp(1rem, 2.5vw, 1.3rem);
-        color: #e0e0e0;
-        margin-bottom: 3rem;
-        font-weight: 300;
-        text-align: center;
+      /* ── Join Button ── */
+      .join-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+        animation: fadeUp 0.8s ease 0.42s both;
       }
 
-      /* Video Section */
-      .video-section {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .video-section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        color: #4facfe;
-        text-align: center;
-      }
-
-      .video-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%;
-        background: rgba(0, 0, 0, 0.3);
-        border-radius: 15px;
-        overflow: hidden;
-      }
-
-      .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        border-radius: 15px;
-      }
-
-      /* PDF Section */
-      .pdf-section {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .pdf-section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        color: #4facfe;
-        text-align: center;
-      }
-
-      .pdf-container {
-        width: 100%;
-        height: 600px;
-        border-radius: 15px;
-        overflow: hidden;
-        background: rgba(0, 0, 0, 0.3);
-      }
-
-      .pdf-container iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        border-radius: 15px;
-      }
-
-      .pdf-fallback {
-        display: none;
-        text-align: center;
-        padding: 2rem;
-        color: #e0e0e0;
-      }
-
-      .pdf-download-link {
+      .join-button {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        margin-top: 1rem;
-        padding: 0.8rem 2rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        gap: 0.75rem;
+        padding: 1.1rem 2.8rem;
+        background: linear-gradient(
+          135deg,
+          var(--gold) 0%,
+          oklch(70% 0.18 60) 100%
+        );
+        color: oklch(12% 0.04 80);
         text-decoration: none;
         border-radius: 50px;
-        font-size: 1rem;
-        font-weight: 600;
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
         transition: all 0.3s ease;
-        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        box-shadow:
+          0 8px 28px var(--gold-glow),
+          0 2px 6px oklch(0% 0 0 / 0.3);
+        position: relative;
+        overflow: hidden;
+        font-family: inherit;
       }
 
-      .pdf-download-link:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
+      .join-button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          oklch(100% 0 0 / 0.25) 50%,
+          transparent 100%
+        );
+        transform: translateX(-100%);
+        transition: transform 0.55s ease;
       }
 
-      @media (max-width: 768px) {
-        .pdf-container {
-          height: 400px;
-        }
-
-        .pdf-section {
-          padding: 1.5rem;
-        }
-
-        .pdf-section h2 {
-          font-size: 1.4rem;
-          margin-bottom: 1rem;
-        }
+      .join-button:hover {
+        transform: translateY(-3px);
+        box-shadow:
+          0 14px 40px var(--gold-glow),
+          0 4px 12px oklch(0% 0 0 / 0.35);
       }
 
-      @media (max-width: 480px) {
-        .pdf-container {
-          height: 300px;
-        }
-
-        .pdf-section h2 {
-          font-size: 1.2rem;
-        }
+      .join-button:hover::before {
+        transform: translateX(100%);
       }
 
-      /* WhatsApp Link */
-      .whatsapp-section {
-        text-align: center;
-        margin-top: 2rem;
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 15px;
-        margin-bottom: 2rem;
+      .join-button:active {
+        transform: translateY(-1px);
       }
 
-      .whatsapp-link {
+      .join-button .btn-icon {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        color: #fefefe;
-        font-size: 1.1rem;
-        font-weight: 500;
-        text-decoration: none;
-        transition: all 0.3s ease;
+        justify-content: center;
       }
 
-      .whatsapp-link:hover {
-        color: #4facfe;
-        transform: translateY(-2px);
+      .btn-ended-msg {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        text-align: center;
       }
 
-      /* Responsive */
-      @media (max-width: 768px) {
+      /* ── Schedule ── */
+      .schedule-section {
+        width: 100%;
+        animation: fadeUp 0.8s ease 0.52s both;
+      }
+
+      .section-title {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--gold-dim);
+        margin-bottom: 1.1rem;
+        text-align: center;
+      }
+
+      .schedule {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid oklch(100% 0 0 / 0.1);
+        background: oklch(100% 0 0 / 0.04);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .schedule-item {
+        display: grid;
+        grid-template-columns: 5.5rem 1fr;
+        align-items: start;
+        gap: 0;
+        border-bottom: 1px solid oklch(100% 0 0 / 0.07);
+        transition: background 0.2s ease;
+      }
+
+      .schedule-item:last-child {
+        border-bottom: none;
+      }
+
+      .schedule-item:hover {
+        background: oklch(100% 0 0 / 0.05);
+      }
+
+      .schedule-item.highlight {
+        background: var(--gold-glow);
+      }
+
+      .schedule-item.highlight:hover {
+        background: oklch(78% 0.15 85 / 0.18);
+      }
+
+      .sched-time {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--gold);
+        font-variant-numeric: tabular-nums;
+        padding: 0.95rem 0.6rem 0.95rem 0.9rem;
+        line-height: 1.4;
+        border-left: 2px solid oklch(100% 0 0 / 0.07);
+        white-space: nowrap;
+      }
+
+      .schedule-item.highlight .sched-time {
+        color: oklch(88% 0.18 80);
+        border-left-color: var(--gold-dim);
+      }
+
+      .sched-event {
+        font-size: 0.92rem;
+        font-weight: 400;
+        color: var(--text-main);
+        padding: 0.95rem 1rem 0.95rem 0.8rem;
+        line-height: 1.45;
+      }
+
+      .schedule-item.highlight .sched-event {
+        font-weight: 600;
+        color: var(--cream);
+      }
+
+      /* ── Footer ── */
+      .footer-note {
+        text-align: center;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        padding-bottom: 1rem;
+        animation: fadeUp 0.8s ease 0.65s both;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 600px) {
         .logos-header {
           padding: 1rem 1rem 1.2rem;
         }
-
         .logo {
-          width: 75px;
-          height: 75px;
+          width: 72px;
+          height: 72px;
           padding: 0.65rem;
         }
-
-        .container {
-          padding: 1rem;
+        .main {
+          padding: 1rem 1rem 2.5rem;
+          gap: 1.8rem;
         }
-
         h1 {
+          font-size: 1.7rem;
+        }
+        .time-unit {
+          min-width: 70px;
+          padding: 0.9rem 0.5rem 0.8rem;
+        }
+        .time-value {
           font-size: 1.8rem;
-          margin-bottom: 0.8rem;
         }
-
-        .subtitle {
-          font-size: 1rem;
-          margin-bottom: 2rem;
+        .join-button {
+          padding: 1rem 2.2rem;
+          font-size: 1.05rem;
         }
-
-        .video-section {
-          padding: 1.5rem;
+        .schedule-item {
+          grid-template-columns: 4.8rem 1fr;
         }
-
-        .video-section h2 {
-          font-size: 1.4rem;
-          margin-bottom: 1rem;
+        .sched-time {
+          font-size: 0.76rem;
+          padding: 0.85rem 0.4rem 0.85rem 0.7rem;
+        }
+        .sched-event {
+          font-size: 0.86rem;
+          padding: 0.85rem 0.8rem 0.85rem 0.6rem;
         }
       }
 
-      @media (max-width: 480px) {
+      @media (max-width: 380px) {
         .logo {
           width: 60px;
           height: 60px;
-          padding: 0.5rem;
         }
-
         h1 {
           font-size: 1.5rem;
-          line-height: 1.4;
         }
-
-        .subtitle {
-          font-size: 0.95rem;
+        .countdown {
+          gap: 0.6rem;
         }
+        .time-unit {
+          min-width: 62px;
+        }
+        .time-value {
+          font-size: 1.6rem;
+        }
+        .join-button {
+          padding: 0.9rem 1.8rem;
+          font-size: 0.98rem;
+        }
+      }
 
-        .video-section h2 {
-          font-size: 1.2rem;
+      /* ── Ended state ── */
+      .ended-banner {
+        display: none;
+        background: oklch(76% 0.13 195 / 0.1);
+        border: 1px solid oklch(76% 0.13 195 / 0.3);
+        border-radius: var(--radius-md);
+        padding: 0.8rem 1.4rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--accent-teal);
+        font-weight: 500;
+        width: 100%;
+      }
+
+      /* ── Entry Form ── */
+      .entry-form-wrap {
+        width: 100%;
+        animation: fadeUp 0.8s ease 0.42s both;
+      }
+
+      .entry-form {
+        background: oklch(100% 0 0 / 0.06);
+        border: 1px solid oklch(100% 0 0 / 0.13);
+        border-radius: var(--radius-lg);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        padding: 1.6rem 1.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+      }
+
+      .form-title {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold-dim);
+        text-align: center;
+        margin-bottom: 0.1rem;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      .field label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        letter-spacing: 0.03em;
+      }
+
+      .field input,
+      .field select {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        background: oklch(100% 0 0 / 0.07);
+        border: 1px solid oklch(100% 0 0 / 0.15);
+        border-radius: var(--radius-sm);
+        color: var(--text-main);
+        font-size: 1rem;
+        font-family: inherit;
+        outline: none;
+        transition:
+          border-color 0.2s ease,
+          background 0.2s ease;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+
+      .field input::placeholder {
+        color: oklch(60% 0.03 260);
+      }
+
+      .field input:focus,
+      .field select:focus {
+        border-color: var(--gold-dim);
+        background: oklch(100% 0 0 / 0.11);
+      }
+
+      .field.error input,
+      .field.error select {
+        border-color: oklch(65% 0.2 25);
+      }
+
+      .field-error {
+        font-size: 0.76rem;
+        color: oklch(70% 0.18 25);
+        font-weight: 500;
+        min-height: 1em;
+        display: none;
+      }
+
+      .field.error .field-error {
+        display: block;
+      }
+
+      /* Custom select arrow */
+      .select-wrap {
+        position: relative;
+      }
+
+      .select-wrap::after {
+        content: "▾";
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gold-dim);
+        pointer-events: none;
+        font-size: 0.9rem;
+      }
+
+      .field select option {
+        background: oklch(18% 0.05 270);
+        color: var(--text-main);
+      }
+
+      .submit-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        padding: 1rem 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--gold) 0%,
+          oklch(70% 0.18 60) 100%
+        );
+        color: oklch(12% 0.04 80);
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        font-family: inherit;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 28px var(--gold-glow);
+        position: relative;
+        overflow: hidden;
+        margin-top: 0.3rem;
+      }
+
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          oklch(100% 0 0 / 0.25),
+          transparent
+        );
+        transform: translateX(-100%);
+        transition: transform 0.55s ease;
+      }
+
+      .submit-btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 40px var(--gold-glow);
+      }
+
+      .submit-btn:hover:not(:disabled)::before {
+        transform: translateX(100%);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .submit-btn .spinner {
+        display: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid oklch(12% 0.04 80 / 0.3);
+        border-top-color: oklch(12% 0.04 80);
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+
+      .submit-btn.loading .spinner {
+        display: block;
+      }
+      .submit-btn.loading .btn-label {
+        opacity: 0.7;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .entry-form {
+          padding: 1.2rem 1.1rem;
         }
       }
     </style>
@@ -446,85 +770,268 @@
         type="video/mp4"
       />
     </video>
+    <div class="bg-overlay"></div>
 
-    <!-- Logo Header -->
-    <div class="logos-header">
-      <div class="logos">
-        <div class="logo">
-          <img
-            src="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@3e413a87a4b239edb1ad21ceb3e9c763c3a0fde7/logo%20bw%20mashazim.svg"
-            alt="Mashazim Logo"
-            class="logo-svg"
-          />
+    <div class="page-wrap">
+      <!-- Logo Header -->
+      <header class="logos-header">
+        <div class="logos">
+          <div class="logo">
+            <img
+              src="https://cdn.jsdelivr.net/gh/yoni-edrigo/zoom-hanhaga@3e413a87a4b239edb1ad21ceb3e9c763c3a0fde7/logo%20bw%20mashazim.svg"
+              alt="Mashazim Logo"
+              class="logo-svg"
+            />
+          </div>
+          <div class="logo">
+            <img
+              src="https://static.wixstatic.com/media/d9444e_d7a7c99753b0415c9e72247f7b68b1e1~mv2.gif"
+              alt="Logo"
+            />
+          </div>
         </div>
-        <div class="logo">
-          <img
-            src="https://static.wixstatic.com/media/d9444e_d7a7c99753b0415c9e72247f7b68b1e1~mv2.gif"
-            alt="Logo"
-          />
+      </header>
+
+      <!-- Main -->
+      <main class="main">
+        <!-- Hero -->
+        <div class="hero">
+          <div class="event-tag">כנס זום · 24.03.26 · 16:00</div>
+          <h1>כנס פסח<br />קורס הנהגה 2026</h1>
+          <p class="org-label">מש״צים מחוז ירושלים</p>
         </div>
-      </div>
+
+        <!-- Countdown -->
+        <div class="countdown-wrap">
+          <p class="countdown-label">ספירה לאחור לכנס</p>
+          <div class="countdown">
+            <div class="time-unit">
+              <span class="time-value" id="days">00</span>
+              <span class="time-label">ימים</span>
+            </div>
+            <div class="time-unit">
+              <span class="time-value" id="hours">00</span>
+              <span class="time-label">שעות</span>
+            </div>
+            <div class="time-unit">
+              <span class="time-value" id="minutes">00</span>
+              <span class="time-label">דקות</span>
+            </div>
+            <div class="time-unit">
+              <span class="time-value" id="seconds">00</span>
+              <span class="time-label">שניות</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zoom opens notice -->
+        <div class="zoom-notice" id="zoom-notice">
+          זום נפתח בשעה 15:45 — הצטרפו מוקדם!
+        </div>
+
+        <!-- Entry Form -->
+        <div class="entry-form-wrap" id="form-wrap">
+          <form class="entry-form" id="entry-form" novalidate>
+            <p class="form-title">כניסה לכנס</p>
+
+            <div class="field" id="field-name">
+              <label for="inp-name">שם משתתף</label>
+              <input
+                type="text"
+                id="inp-name"
+                name="name"
+                placeholder="שם מלא"
+                autocomplete="name"
+                dir="rtl"
+              />
+              <span class="field-error" id="err-name"></span>
+            </div>
+
+            <div class="field" id="field-group">
+              <label for="inp-group">קבוצה</label>
+              <div class="select-wrap">
+                <select id="inp-group" name="group" dir="rtl">
+                  <option value="">בחר/י קבוצה</option>
+                  <option value="1">קבוצה 1</option>
+                  <option value="2">קבוצה 2</option>
+                  <option value="3">קבוצה 3</option>
+                  <option value="4">קבוצה 4</option>
+                  <option value="5">קבוצה 5</option>
+                  <option value="6">קבוצה 6</option>
+                  <option value="7">קבוצה 7</option>
+                  <option value="8">קבוצה 8</option>
+                  <option value="9">קבוצה 9</option>
+                  <option value="10">קבוצה 10</option>
+                </select>
+              </div>
+              <span class="field-error" id="err-group"></span>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submit-btn">
+              <span class="spinner"></span>
+              <span class="btn-label">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  style="vertical-align: middle; margin-left: 6px"
+                >
+                  <path
+                    d="M2 8.5C2 7.67 2.67 7 3.5 7h11c.83 0 1.5.67 1.5 1.5v7c0 .83-.67 1.5-1.5 1.5h-11C2.67 17 2 16.33 2 15.5v-7zm2 .5v6h10V9H4z"
+                  />
+                  <path
+                    d="M18.5 8.7l3.2-2.4c.3-.2.7 0 .7.4v10.6c0 .4-.4.6-.7.4l-3.2-2.4V8.7z"
+                  />
+                </svg>
+                הצטרפו לכנס בזום
+              </span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Shown after event ends -->
+        <p class="btn-ended-msg" id="ended-msg" style="display: none">
+          הכנס הסתיים — תודה על ההשתתפות!
+        </p>
+
+        <p class="footer-note">מש״צים מחוז ירושלים · כנס פסח 2026</p>
+      </main>
     </div>
 
-    <div class="container">
-      <div class="content">
-        <h1>הקלטת מפגש הורים לקראת<br />כנס פסח הנהגה</h1>
-        <p class="subtitle">מש"צים מחוז ירושלים</p>
+    <script type="module">
+      import { z } from "https://cdn.jsdelivr.net/npm/zod@3.23.8/+esm";
 
-        <!-- Video Section -->
-        <div class="video-section">
-          <h2>📹 הקלטת המפגש</h2>
-          <div class="video-container">
-            <!-- TODO: Replace YOUTUBE_VIDEO_ID with the actual YouTube video ID -->
-            <iframe
-              src="https://www.youtube.com/embed/xgY8NUwjPsM?si=rBdFc4dq2XGB2oc_"
-              title="הקלטת מפגש הורים לקראת כנס פסח הנהגה"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-              "
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
+      const ZOOM_URL = "https://edu-il.zoom.us/j/86355738620";
+      const WEBHOOK =
+        "https://hook.eu2.make.com/fqmwfcgi7ekfwny6u6bmpm26m7x6gyhj";
+      const TARGET = new Date("2026-03-24T16:00:00+03:00").getTime();
+      const ZOOM_OPENS = new Date("2026-03-24T15:45:00+03:00").getTime();
+      const EVENT_ENDS = new Date("2026-03-24T17:30:00+03:00").getTime();
 
-        <!-- PDF Section -->
-        <div class="pdf-section">
-          <h2>📊 מצגת המפגש</h2>
-          <div class="pdf-container">
-            <iframe
-              src="Jerusalem_Mashatsim_2026_%283%29.pdf"
-              title="מצגת מפגש הורים - כנס פסח הנהגה"
-            ></iframe>
-          </div>
-          <div style="text-align: center; margin-top: 1rem">
-            <a
-              href="Jerusalem_Mashatsim_2026_%283%29.pdf"
-              download
-              class="pdf-download-link"
-            >
-              <span>⬇️</span>
-              הורדת המצגת
-            </a>
-          </div>
-        </div>
+      // ── Zod schema ──
+      const schema = z.object({
+        name: z.string().trim().min(2, "נא להזין שם מלא (לפחות 2 תווים)"),
+        group: z.string().min(1, "נא לבחור קבוצה"),
+      });
 
-        <!-- WhatsApp Section -->
-        <div class="whatsapp-section">
-          <a
-            href="https://chat.whatsapp.com/GP4ISwOhBBFAORJffroT8y"
-            target="_blank"
-            class="whatsapp-link"
-          >
-            הצטרפו לקבוצת ההורים בוואטסאפ
-            <span>📱</span>
-          </a>
-        </div>
-      </div>
-    </div>
+      // ── DOM refs ──
+      const dEl = document.getElementById("days");
+      const hEl = document.getElementById("hours");
+      const mEl = document.getElementById("minutes");
+      const sEl = document.getElementById("seconds");
+      const formWrap = document.getElementById("form-wrap");
+      const form = document.getElementById("entry-form");
+      const submitBtn = document.getElementById("submit-btn");
+      const endedMsg = document.getElementById("ended-msg");
+      const zoomNotice = document.getElementById("zoom-notice");
+
+      // ── Helpers ──
+      function pad(n) {
+        return String(n).padStart(2, "0");
+      }
+
+      function setFieldError(fieldId, errId, msg) {
+        const f = document.getElementById(fieldId);
+        const e = document.getElementById(errId);
+        if (msg) {
+          f.classList.add("error");
+          e.textContent = msg;
+        } else {
+          f.classList.remove("error");
+          e.textContent = "";
+        }
+      }
+
+      function clearErrors() {
+        setFieldError("field-name", "err-name", "");
+        setFieldError("field-group", "err-group", "");
+      }
+
+      // ── Countdown ──
+      function tick() {
+        const now = Date.now();
+        const dist = TARGET - now;
+
+        if (now > EVENT_ENDS) {
+          dEl.textContent =
+            hEl.textContent =
+            mEl.textContent =
+            sEl.textContent =
+              "00";
+          formWrap.style.display = "none";
+          endedMsg.style.display = "block";
+          zoomNotice.style.display = "none";
+          return;
+        }
+
+        if (dist <= 0) {
+          dEl.textContent =
+            hEl.textContent =
+            mEl.textContent =
+            sEl.textContent =
+              "00";
+        } else {
+          dEl.textContent = pad(Math.floor(dist / 86400000));
+          hEl.textContent = pad(Math.floor((dist % 86400000) / 3600000));
+          mEl.textContent = pad(Math.floor((dist % 3600000) / 60000));
+          sEl.textContent = pad(Math.floor((dist % 60000) / 1000));
+        }
+
+        if (now >= ZOOM_OPENS) {
+          zoomNotice.style.opacity = "1";
+          zoomNotice.textContent = "הזום פתוח — הצטרפו עכשיו!";
+          zoomNotice.style.background = "oklch(76% 0.13 195 / 0.18)";
+        } else {
+          zoomNotice.style.opacity = "0.6";
+        }
+      }
+
+      tick();
+      setInterval(tick, 1000);
+
+      // ── Form submit ──
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        clearErrors();
+
+        const raw = {
+          name: document.getElementById("inp-name").value,
+          group: document.getElementById("inp-group").value,
+        };
+
+        const result = schema.safeParse(raw);
+
+        if (!result.success) {
+          const errs = result.error.flatten().fieldErrors;
+          if (errs.name) setFieldError("field-name", "err-name", errs.name[0]);
+          if (errs.group)
+            setFieldError("field-group", "err-group", errs.group[0]);
+          return;
+        }
+
+        // Loading state
+        submitBtn.disabled = true;
+        submitBtn.classList.add("loading");
+
+        try {
+          await fetch(WEBHOOK, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: result.data.name,
+              group: result.data.group,
+              timestamp: new Date().toISOString(),
+            }),
+          });
+        } catch (_) {
+          // Don't block the user if the webhook fails
+        }
+
+        // Redirect to Zoom regardless
+        window.location.href = ZOOM_URL;
+      });
+    </script>
   </body>
 </html>
